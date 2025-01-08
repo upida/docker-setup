@@ -21,6 +21,11 @@ RUN apt-get install -y \
     php7.4-curl \
     libapache2-mod-php7.4
 
+RUN apt-get install -y \
+    ffmpeg
+
+RUN echo "allow_url_fopen = On\n" >> /etc/php/7.4/cli/php.ini
+
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
